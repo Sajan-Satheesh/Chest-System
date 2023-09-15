@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65000a33f8b279c459fc3bd4caab0fd2, type: 3}
+  m_Name: Epic
+  m_EditorClassIdentifier: 
+  chestType: 2
+  spawnState: 0
+  lockedChest: {fileID: 21300000, guid: 74974dd02e89d304fba202f53c5ec7cd, type: 3}
+  openedChest: {fileID: 21300000, guid: 27fcba9a7d12ae041bbe7c0dd68cb98b, type: 3}
+  waitTime: 0.03
+  minCoins: 600
+  maxCoins: 800
+  <minGems>k__BackingField: 30
+  <maxGems>k__BackingField: 45
+  <chestView>k__BackingField: {fileID: -6745944131084409162, guid: 2eb0e28c8b8acbc41967d1e615038236, type: 3}
