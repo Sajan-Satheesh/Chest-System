@@ -5,7 +5,7 @@
 1. Can set the max chest count to fill.
 2. Can set the amount of chests that can be queued.
 
-## 🧱 Executable Features
+## ▶️ Executable Features
 1. Able to fill the chest to the maximum amount after any chest is removed by unlocking.
 2. Chests can be scrolled and chosen.
 3. Chests can be unlocked directly by spending coins.
