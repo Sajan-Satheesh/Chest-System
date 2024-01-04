@@ -1,4 +1,5 @@
 # Chest-System
+![image_001_0000](https://github.com/Sajan-Satheesh/Chest-System/assets/64242770/b9142255-5a67-475a-aff5-d66efe72bacd)
 </br>
 
 ## ⚙️ Editor Features
@@ -12,16 +13,16 @@
 4. Also they can be opened by waiting for the required time.
 
 ## ✒️ Implementations.
-1. Scriptable objects to set up the chest data.
-2. Observer Pattern to update UI and update chest currency and rewards.
-3. Queue data structure to update the lists of chests.
-4. Singleton pattern to maintain different services.
-5. Prefab as a template for chests.
+1. MVC (Model View Controller) pattern used for Chest implementation.
+2. Scriptable objects to set up the chest data.
+3. Implemented State Machine pattern to switch between different states like locking, unlocking, and opening of chests.
+4. Observer Pattern to update UI and update chest currency and rewards.
+5. Queue data structure to update the lists of chests.
+6. Singleton pattern to maintain different services.
+7. Prefab as a template for chests.
 
 </br>
 
-
-![image_001_0000](https://github.com/Sajan-Satheesh/Chest-System/assets/64242770/b9142255-5a67-475a-aff5-d66efe72bacd)
 
 <div align="left">
       <a href="https://www.youtube.com/watch?v=yEWKxOwtkFU">
