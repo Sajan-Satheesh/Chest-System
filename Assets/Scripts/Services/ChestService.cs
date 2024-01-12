@@ -4,25 +4,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChestService : G_MonoSingleton<ChestService>
+public class ChestService : MonoSingletonGeneric<ChestService>
 {
     [SerializeField] private int totalChests;
     [SerializeField] public int unlockingQueueSize;
-    [SerializeField] public List<Action> Q_ToOpen = new List<Action>();
-    [SerializeField] public List<ChestContoller> allChests = new List<ChestContoller>();
+    [SerializeField] public List<ChestController> openingQueue { get; private set; } = new List<ChestController>();
+    [SerializeField] public List<ChestController> allChests = new List<ChestController>();
     [SerializeField] Transform parentOfChests;
-    [SerializeField] ChestSOC chestCollection;//JFT
+    [SerializeField] ChestCollectionData chestCollection;//JFT
 
-    public Action<int, int> A_initiateReward { get; set; }
-    public Action<int> A_initiateSpend { get; set; }
 
     private void Start()
     {
-        createChests();
-        checkQueuesize();
+        CreateChests();
+        CheckQueuesize();
     }
 
-    private void checkQueuesize()
+    private void CheckQueuesize()
     {
         if(totalChests < unlockingQueueSize)
         {
@@ -31,14 +29,14 @@ public class ChestService : G_MonoSingleton<ChestService>
     }
 
 
-    public void createChests()
+    public void CreateChests()
     {    
         if(allChests.Count < totalChests)
         {
             int existingChestCount = allChests.Count;
             for (int i = 0; i < totalChests - existingChestCount; i++)
             {
-                allChests.Add(new ChestContoller(drawRandomChest(), parentOfChests)); // JFT
+                allChests.Add(new ChestController(DrawRandomChest(), parentOfChests)); // JFT
             }
         }
         else
@@ -48,13 +46,11 @@ public class ChestService : G_MonoSingleton<ChestService>
     
     }
 
-    private ChestSO drawRandomChest()
+    private ChestData DrawRandomChest()
     {
         int index = UnityEngine.Random.Range(0, chestCollection.chestCollection.Count);
         return chestCollection.chestCollection[index];
     }
 }
 
-public enum ChestTypes { common, rare, epic, legendary}
 
-public enum ChestState { locked, unlocked, unlocking, inQueue, remove }

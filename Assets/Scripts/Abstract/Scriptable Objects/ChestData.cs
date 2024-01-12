@@ -4,10 +4,10 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "Chest",menuName = "Chests/Chest Type", order = 2)]
-public class ChestSO : ScriptableObject
+public class ChestData : ScriptableObject
 {
     [SerializeField] public ChestTypes chestType;
-    [SerializeField] public ChestState spawnState;
+    [SerializeField] public ChestStates spawnState;
     [SerializeField] public Sprite lockedChest;
     [SerializeField] public Sprite openedChest;
     [SerializeField] public float waitTime;

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class UiServices : G_MonoSingleton<UiServices>
+public class UiServices : MonoSingletonGeneric<UiServices>
 {
     [SerializeField] private TMP_Text T_coins;
     [SerializeField] private TMP_Text T_gems;
 
     private void Start()
     {
-        ExchangeServices.instance.A_updateUI += updateCoinsAndGems;
+        EventServices.instance.currency_UpdateUI += updateCoinsAndGems;
     }
 
     private void updateCoinsAndGems(int _coins, int _gems)

@@ -1,0 +1,1 @@
+public enum ChestStates { LOCKED, UNLOCKED, UNLOCKING, IN_QUEUE, REMOVE }

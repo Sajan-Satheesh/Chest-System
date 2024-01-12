@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class G_MonoSingleton<T> : MonoBehaviour where T : G_MonoSingleton<T>
+public class MonoSingletonGeneric<T> : MonoBehaviour where T : MonoSingletonGeneric<T>
 {
     public static T instance { get; private set; }
     protected virtual void Awake()

@@ -12,11 +12,11 @@ public class ChestView : MonoBehaviour
     [field: SerializeField] public Button unlockWgem { get; set; }
     [field: SerializeField] public Button unlockWtime { get; set; }
 
-    private ChestContoller chestContoller;
+    private ChestController chestContoller;
 
     void Start()
     {
-        chestContoller.startChestView();
+        chestContoller.StartChestView();
     }
 
     public void startAcoroutine(ref Coroutine coroutine, Func<float,IEnumerator> function, float time)
@@ -34,24 +34,24 @@ public class ChestView : MonoBehaviour
         }
     }
 
-    public void getChestController(ChestContoller _chestContoller)
+    public void getChestController(ChestController _chestContoller)
     {
         this.chestContoller = _chestContoller;
     }
 
     public void startOpeningChest()
     {
-        chestContoller.changeChestState(ChestState.inQueue);
+        chestContoller.chestModel.chestStateMachine.SetState(ChestStates.IN_QUEUE);
     }
 
     public void removeChest()
     {
-        chestContoller.changeChestState(ChestState.remove);
+        chestContoller.chestModel.chestStateMachine.SetState(ChestStates.REMOVE);
     }
 
     public void unlockWithGems()
     {
-        chestContoller.changeChestState(ChestState.unlocked);
+        chestContoller.chestModel.chestStateMachine.SetState(ChestStates.UNLOCKED);
     }
 
 }

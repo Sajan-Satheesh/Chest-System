@@ -3,16 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExchangeServices : G_MonoSingleton<ExchangeServices>
+public class CurrencyServices : MonoSingletonGeneric<CurrencyServices>
 {
     [SerializeField] private int coins;
     [SerializeField] private int gems;
-    public Action<int, int> A_updateUI { get; set; }
+    
 
     private void Start()
     {
-        ChestService.instance.A_initiateReward += Reward;
-        ChestService.instance.A_initiateSpend+= Spend;
+        EventServices.instance.chest_initiateReward += Reward;
+        EventServices.instance.chest_initiateSpend += Spend;
         updateUI();
     }
 
@@ -37,6 +37,6 @@ public class ExchangeServices : G_MonoSingleton<ExchangeServices>
 
     private void updateUI()
     {
-        A_updateUI?.Invoke(coins, gems);
+        EventServices.instance.Invoke_CurrencyUpdateUI(coins, gems);
     }
 }
